@@ -61,7 +61,7 @@ app.use(express.static(path.join(__dirname, "./dist")));
 
 // 4. Catch-All Route for SPA (React Router)
 // If the request isn’t an API call, send the index.html
-app.get("*", (req, res) => {
+app.get(".*", (req, res) => {
 if (!req.path.startsWith("/api")) {
 res.sendFile(path.join(__dirname, "./dist", "index.html"));
 }
